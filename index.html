@@ -177,11 +177,10 @@
     </style>
 
   </head>
-  <body>
 
-<!-- preLoader-->
-  <div class="spinner-wrapper">
-  <div class="spinner">
+  <body onload="myFunction()" style="margin:0;">
+  <!-- preLoader-->
+  <div id="loader">
   <div class="sk-cube-grid">
     <div class="sk-cube sk-cube1"></div>
     <div class="sk-cube sk-cube2"></div>
@@ -194,9 +193,8 @@
     <div class="sk-cube sk-cube9"></div>
   </div>
   </div>
-  
-
-
+  </div>
+  <div style="display:none;" id="myDiv">
 
   <section class="menu cid-rnqGQYlYuP" once="menu" id="menu2-1r">
 
@@ -1021,19 +1019,14 @@
   <script src="assets/gallery/script.js"></script>
   <script src="assets/slidervideo/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
-  <!-- preLoader -->
+  <!-- preLoader -->  <!-- preLoader -->
   <script>
-  $(document).ready(function() {
-  //Preloader
-  $(window).on("load", function() {
-  preloaderFadeOutTime = 500;
-  function hidePreloader() {
-  var preloader = $('.spinner-wrapper');
-  preloader.fadeOut(preloaderFadeOutTime);
-  }
-  hidePreloader();
-  });
-  });
+  var myVar;
+  function myFunction() {
+  myVar = setTimeout(showPage, 3000); }
+  function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block"; }
   </script>
 
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
